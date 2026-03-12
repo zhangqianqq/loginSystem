@@ -1,0 +1,58 @@
+# 员工登录系统 - Spring Boot 配置文件
+
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# Spring 配置
+spring:
+  application:
+    name: employee-auth
+
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/employee_system?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: RootPassword123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA 配置
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+  # 邮件配置
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your_email@gmail.com
+    password: your_app_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+# JWT 配置
+jwt:
+  secret: your_jwt_secret_key_here_at_least_256_bits_long_for_security_purpose
+  expiration: 3600000  # 1 小时（毫秒）
+  refresh-expiration: 604800000  # 7 天（毫秒）
+
+# 日志配置
+logging:
+  level:
+    com.employee.auth: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

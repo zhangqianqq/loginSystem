@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisProjectProfileManager">
+    <option name="PROJECT_PROFILE" />
+    <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
+    <list size="0" />
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="PDMPlugin">
+    <option name="customRuleSets">
+      <list>
+        <option value="$USER_HOME$/Documents/dev_tool/code-format/pmd4.0-ruleset-base.xml" />
+        <option value="E:\IWhaleCloud\code\JavaCodingCheck\Java-Coding-Specification-master-jcs-Whalecloud-rules\jcs-Whalecloud\rules\PMD\pmd4.0-ruleset-base.xml" />
+        <option value="E:/Yes/dev_tool/code-format/pmd4.0-ruleset-base.xml" />
+        <option value="E:/dev_tool/code-format/pmd4.0-ruleset-base.xml" />
+        <option value="D:\Dev\IDEA\Plugins\PMD\pmd4.0-ruleset-base.xml" />
+        <option value="F:\IdeaTool\PMD\pmd4.0-ruleset-base.xml" />
+        <option value="E:/Yes_Copy/dev_tool/code-format/pmd4.0-ruleset-base.xml" />
+        <option value="E:\IdeaTool\PMD\pmd4.0-ruleset-base.xml" />
+        <option value="D:\work\JupiterCodeRule\PMD\pmd4.0-ruleset-base.xml" />
+        <option value="E:/../dev_tool/code-format/pmd4.0-ruleset-base.xml" />
+      </list>
+    </option>
+    <option name="skipTestSources" value="false" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK" />
+  <component name="SuppressionsComponent">
+    <option name="suppComments" value="[]" />
+  </component>
+</project>

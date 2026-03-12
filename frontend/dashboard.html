@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仪表板 - 员工登录系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .dashboard-card h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .dashboard-card p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .user-info {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .user-info p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .user-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .user-info strong {
+            color: #333;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #f44336 0%, #e53935 100%);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-card">
+        <h1>🎉 登录成功！</h1>
+        <p>欢迎回来，您已成功登录系统</p>
+
+        <div class="user-info">
+            <p><strong>用户名：</strong><span id="username">-</span></p>
+            <p><strong>邮箱：</strong><span id="email">-</span></p>
+            <p><strong>姓名：</strong><span id="fullName">-</span></p>
+        </div>
+
+        <button class="btn btn-danger" onclick="logout()">退出登录</button>
+    </div>
+
+    <script>
+        // 获取用户信息
+        const userStr = localStorage.getItem('user');
+        if (userStr) {
+            const user = JSON.parse(userStr);
+            document.getElementById('username').textContent = user.username;
+            document.getElementById('email').textContent = user.email;
+            document.getElementById('fullName').textContent = user.fullName || '-';
+        } else {
+            // 如果没有用户信息，跳转到登录页
+            window.location.href = '/';
+        }
+
+        // 退出登录
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>
